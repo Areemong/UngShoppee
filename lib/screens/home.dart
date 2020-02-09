@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ungshoppee/screens/search.dart';
 import 'package:ungshoppee/utility/my_style.dart';
-import 'package:ungshoppee/widget/about_uset.dart';
+import 'package:ungshoppee/widget/about_user.dart';
+
 import 'package:ungshoppee/widget/basket.dart';
 import 'package:ungshoppee/widget/main_home.dart';
 

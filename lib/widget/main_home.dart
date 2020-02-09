@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:ungshoppee/screens/search.dart';
 import 'package:ungshoppee/utility/my_constant.dart';
 import 'package:dio/dio.dart';
 
@@ -22,23 +23,219 @@ class _MainHomeState extends State<MainHome> {
   }
 
   Widget group1() {
-    return Card(
-      child: Column(
-        children: <Widget>[
-          Icon(Icons.android),
-          Text('Group 1'),
-        ],
+    return Container(
+      width: 100.0,
+      height: 100.0,
+      child: GestureDetector(
+        onTap: () {
+          print('fast fast food');
+          routhToSearch(1);
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+          ),
+          color: Colors.yellow,
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Icon(
+                  Icons.fastfood,
+                  size: 48.0,
+                  color: Colors.green.shade800,
+                ),
+                Text('Fast food'),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  void routhToSearch(int index) {
+    MaterialPageRoute materialPageRoute =
+        MaterialPageRoute(builder: (BuildContext buildContext) {
+      return Search(
+        index: index,
+      );
+    });
+    Navigator.of(context).push(materialPageRoute);
+  }
+
+  Widget group2() {
+    return Container(
+      width: 100.0,
+      height: 100.0,
+      child: GestureDetector(
+        onTap: () {
+          routhToSearch(2);
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+          ),
+          color: Colors.lime,
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Icon(
+                  Icons.group_work,
+                  size: 48.0,
+                  color: Colors.orange.shade500,
+                ),
+                Text('Curry'),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget group3() {
+    return Container(
+      width: 100.0,
+      height: 100.0,
+      child: GestureDetector(
+        onTap: () {
+          routhToSearch(3);
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+          ),
+          color: Colors.lightBlue,
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Container(
+                  child: Image.asset('images/food1.png'),
+                  width: 48.0,
+                  height: 48.0,
+                ),
+                Text('Grill'),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget group4() {
+    return Container(
+      width: 100.0,
+      height: 100.0,
+      child: GestureDetector(onTap: (){
+        routhToSearch(4);
+      },
+              child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+          ),
+          color: Colors.yellow,
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Icon(
+                  Icons.airline_seat_flat,
+                  size: 48.0,
+                  color: Colors.purple,
+                ),
+                Text('Bakery'),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget group5() {
+    return Container(
+      width: 100.0,
+      height: 100.0,
+      child: GestureDetector(onTap: (){
+        routhToSearch(5);
+      },
+              child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+          ),
+          color: Colors.yellow,
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Icon(
+                  Icons.book,
+                  size: 48.0,
+                  color: Colors.cyan,
+                ),
+                Text('Icecream'),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget group6() {
+    return Container(
+      width: 100.0,
+      height: 100.0,
+      child: GestureDetector(onTap: (){
+        routhToSearch(6);
+      },
+              child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+          ),
+          color: Colors.yellow,
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Icon(
+                  Icons.camera,
+                  size: 48.0,
+                  color: Colors.pink,
+                ),
+                Text('Berage'),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
 
   Widget row1Group() {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       // mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
         group1(),
-        group1(),
-        group1(),
+        group2(),
+        group3(),
+      ],
+    );
+  }
+
+  Widget row2Group() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      // mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: <Widget>[
+        group4(),
+        group5(),
+        group6(),
       ],
     );
   }
@@ -47,7 +244,7 @@ class _MainHomeState extends State<MainHome> {
     return Column(
       children: <Widget>[
         row1Group(),
-        row1Group(),
+        row2Group(),
       ],
     );
   }

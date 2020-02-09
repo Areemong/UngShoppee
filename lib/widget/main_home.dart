@@ -81,11 +81,12 @@ class _MainHomeState extends State<MainHome> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                Icon(
-                  Icons.group_work,
-                  size: 48.0,
-                  color: Colors.orange.shade500,
+                               Container(
+                  child: Image.asset('images/curry.png'),
+                  width: 48.0,
+                  height: 48.0,
                 ),
+                
                 Text('Curry'),
               ],
             ),
